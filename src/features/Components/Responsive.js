@@ -5,6 +5,7 @@ import { Grommet, Header, Anchor, Box, ResponsiveContext, Menu } from 'grommet';
 import { Bike, Menu as MenuIcon } from 'grommet-icons';
 
 import Brief from './Sections/Brief';
+import Skills from './Sections/Skills';
 
 const theme = {
   global: {
@@ -91,6 +92,7 @@ const Responsive = () => (
       </ResponsiveContext.Consumer>
     </Header>
     <Brief></Brief>
+    <Skills></Skills>
   </Grommet>
 );
 
