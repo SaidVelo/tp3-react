@@ -13,7 +13,8 @@ export function Counter() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState('2');
-
+  // ComponentDidMountes
+  // React.useEffect()
   return (
     <div>
       <div className={styles.row}>
@@ -38,6 +39,7 @@ export function Counter() {
           className={styles.textbox}
           aria-label="Set increment amount"
           value={incrementAmount}
+          //utiliser la methone
           onChange={e => setIncrementAmount(e.target.value)}
         />
         <button
