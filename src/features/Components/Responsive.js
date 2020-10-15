@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import { Grommet, Header, Anchor, Box, ResponsiveContext, Menu } from 'grommet';
 import { Bike, Menu as MenuIcon } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
+
+import Brief from './Sections/Brief';
 
 const theme = {
   global: {
@@ -27,6 +28,8 @@ const Responsive = () => (
       <Anchor
         href="#canvas"
         icon={<Bike color="brand" size='large' />}
+        label="Saïd VELO"
+        size="xlarge"
       />
       <ResponsiveContext.Consumer>
         {size =>
@@ -39,7 +42,7 @@ const Responsive = () => (
                 items={[
                   {
                     label: <Box pad="small">Brief</Box>,
-                    href: '#presentation',
+                    href: '#brief',
                   },
                   {
                     label: <Box pad="small">Skills</Box>,
@@ -87,6 +90,7 @@ const Responsive = () => (
         }
       </ResponsiveContext.Consumer>
     </Header>
+    <Brief></Brief>
   </Grommet>
 );
 
