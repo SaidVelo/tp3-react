@@ -6,6 +6,7 @@ import { Bike, Menu as MenuIcon } from 'grommet-icons';
 
 import Brief from './Sections/Brief';
 import Skills from './Sections/Skills';
+import Formations from './Sections/Formations';
 
 const theme = {
   global: {
@@ -93,6 +94,7 @@ const Responsive = () => (
     </Header>
     <Brief></Brief>
     <Skills></Skills>
+    <Formations></Formations>
   </Grommet>
 );
 
