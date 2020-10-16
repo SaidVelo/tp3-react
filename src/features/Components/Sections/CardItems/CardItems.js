@@ -49,17 +49,17 @@ const CardItems = (props) => {
     );
   };
   return (
-    <Grommet theme={theme}>
-      <Box pad="large" align="start" >
-        <Card elevation="large" width="medium" background="light-2" align="center">
-          <CardBody height="small" background="light">
+    <Grommet  theme={theme}>
+      <Box >
+        <Card elevation="large" width="medium" background="light-2" alignSelf="center" alignContent="center">
+          <CardBody width="large" height="small" background="light">
             <Image
               fill="horizontal"
               src={props.image}
             />
           </CardBody>
           <Box pad={{ horizontal: 'medium' }} responsive={false}>
-            <Heading level="2" margin={{"top": "large"}, {"bottom": "none"}} color="dark" selfAlign="center" >
+            <Heading level="2" margin={{"top": "large"}, {"bottom": "none"}} color="dark" alignSelf="center" >
               {props.title}
             </Heading>
           </Box>

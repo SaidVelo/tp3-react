@@ -5,7 +5,7 @@ import { Box, Image, Paragraph, Heading, Button } from 'grommet';
 
 
 const Brief = () => (
-  <Box fill="horizontal" direction="column" id="brief">
+  <Box fill="horizontal" direction="column" pad={{"bottom": "xlarge"}} id="brief">
     <Box
       fill="horizontal"
       direction="row-responsive"
