@@ -1,15 +1,12 @@
 import React from 'react';
-import { DownloadOption } from 'grommet-icons';
-
-import { Box, Image, Paragraph, Heading, Button } from 'grommet';
+import { Box } from 'grommet';
 
 import CardItems from './CardItems/CardItems';
 
-
-
 const Skills = () => (
-  <Box fill="horizontal" direction="column" id="brief" background="dark" id="skills">
-    <CardItems></CardItems>
+  <Box fill="horizontal" direction="column" background="dark" gap="large" id="skills">
+    <CardItems title="Frontend" image='http://localhost:3000/assets/woman.jpg' list={['Javascript', 'HTML', 'CSS']}></CardItems>
+    {/* <CardItems title="Backend"></CardItems> */}
   </Box>
 );
 

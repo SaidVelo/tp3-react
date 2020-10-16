@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import {
-  Anchor,
   Box,
   Button,
   Card,
@@ -12,65 +11,70 @@ import {
   Heading,
   Grommet,
   Image,
-  Paragraph,
+  List,
 } from 'grommet';
 
-import { FormDown, FormUp, Desktop, ShareOption } from 'grommet-icons';
+import { FormDown, FormUp } from 'grommet-icons';
 
 const theme = {
-  global: {
-    font: {
-      family: `Comic Sans MS, -apple-system,
-         BlinkMacSystemFont, 
-         "Segoe UI", 
-         Roboto`,
-    },
+  color: {
+    brand: '#fc6f20',
   },
   card: {
     elevation: 'none',
     background: 'light-2',
+    brand: '#fc6f20',
+    light: '#f8f8ff',
+    dark: '#21242c',
+    transparent: '#ffffff00',
     footer: {
       pad: 'medium',
     },
   },
+  
 };
 
-const CardItems = () => {
+const CardItems = (props) => {
   const [open, setOpen] = React.useState(false);
-  const [favorite, setFavorite] = React.useState(false);
 
   const ExpandButton = ({ ...rest }) => {
     const Icon = open ? FormUp : FormDown;
     return (
       <Button
+        // pad="none"
         hoverIndicator="light-4"
-        icon={<Icon color="brand" />}
+        icon={<Icon color="#fc6f20" size="medium" />}
         {...rest}
       />
     );
   };
   return (
     <Grommet theme={theme}>
-      <Box pad="medium" align="start">
-        <Card elevation="large" width="medium">
-          <CardBody height="small">
-            <Desktop></Desktop>
+      <Box pad="large" align="start" >
+        <Card elevation="large" width="medium" background="light-2" align="center">
+          <CardBody height="small" background="light">
+            <Image
+              fill="horizontal"
+              src={props.image}
+            />
           </CardBody>
           <Box pad={{ horizontal: 'medium' }} responsive={false}>
-            <Heading level="3" margin={{ vertical: 'medium' }}>
-              Front-End
+            <Heading level="2" margin={{"top": "large"}, {"bottom": "none"}} color="dark" selfAlign="center" >
+              {props.title}
             </Heading>
           </Box>
-          <CardFooter>
+          <CardFooter justify="center" pad={{"top": "none"}, {"bottom": "small"}} fill="horizontal">
             <ExpandButton onClick={() => setOpen(!open)} />
           </CardFooter>
-          <Collapsible open={open}>
-            <Paragraph margin="medium" color="dark-3">
-              The greatest bridge builders of antiquity were the ancient Romans.
-              The Romans built arch bridges and aqueducts that could stand in
-              conditions that would damage or destroy earlier designs. Some
-              stand today.
-            </Paragraph>
+          <Collapsible fill="horizontal" width="100%" open={open}>
+          <List margin={{"bottom": "large"}}
+            // primaryKey="name"
+            // secondaryKey="percent"
+            // width="100%"
+            // fill="horizontal"
+            data={props.list}
+            itemProps={{"width": "100%"}}
+          />
           </Collapsible>
         </Card>
       </Box>
