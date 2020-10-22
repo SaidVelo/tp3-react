@@ -14,27 +14,25 @@ import {
 import { FormDown, FormUp } from 'grommet-icons';
 
 const theme = {
-  color: {
-    brand: '#fc6f20',
-  },
-  card: {
-    elevation: 'none',
-    background: 'light-2',
-    brand: '#fc6f20',
-    light: '#f8f8ff',
-    dark: '#21242c',
-    transparent: '#ffffff00',
-    footer: {
-      pad: 'medium',
+  global: {
+    colors: {
+      brand: '#fc6f20',
+      light: '#f8f8ff',
+      dark: '#21242c',
+      transparent: '#ffffff00'
+    },
+    font: {
+      family: 'Poppins',
+      size: '18px',
+      height: '20px',
     },
   },
-  
 };
 
 const ExperienceItem = (props) => {
   return (
     <Grommet  theme={theme}>
-        <Card height="small" width="medium" margin="medium" background="light-1">
+        <Card height="small" width="medium" margin="medium" background="dark">
             <CardHeader pad="medium">Header</CardHeader>
             <CardBody pad="medium">Body</CardBody>
             <CardFooter pad={{horizontal: "small"}} background="light-2">   

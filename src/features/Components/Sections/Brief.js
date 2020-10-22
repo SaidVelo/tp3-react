@@ -13,7 +13,7 @@ const Brief = () => (
       align="center"
       pad="small"
     >
-      <Box width="80%" justify="center" align="center" alignSelf="center">
+      <Box width="80%" justify="center" align="center" alignSelf="center" flex="shrink">
         <Image
           height="auto"
           fill="horizontal"

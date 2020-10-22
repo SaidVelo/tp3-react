@@ -12,26 +12,31 @@ import {
   Grommet,
   Image,
   List,
+  Paragraph
 } from 'grommet';
 
 import { FormDown, FormUp } from 'grommet-icons';
 
 const theme = {
-  color: {
-    brand: '#fc6f20',
-  },
-  card: {
-    elevation: 'none',
-    background: 'light-2',
-    brand: '#fc6f20',
-    light: '#f8f8ff',
-    dark: '#21242c',
-    transparent: '#ffffff00',
-    footer: {
-      pad: 'medium',
+  global: {
+    colors: {
+      brand: '#fc6f20',
+      light: '#f8f8ff',
+      dark: '#21242c',
+      transparent: '#ffffff00'
+    },
+    font: {
+      family: 'Poppins',
+      size: '18px',
+      height: '20px',
+    },
+    card: {
+      elevation: 'none',
+      footer: {
+        pad: 'medium',
+      },
     },
   },
-  
 };
 
 const CardItems = (props) => {
@@ -43,23 +48,23 @@ const CardItems = (props) => {
       <Button
         // pad="none"
         hoverIndicator="light-4"
-        icon={<Icon color="#fc6f20" size="medium" />}
+        icon={<Icon color="brand" size="medium" />}
         {...rest}
       />
     );
   };
   return (
     <Grommet  theme={theme}>
-      <Box >
-        <Card elevation="large" width="medium" background="light-2" alignSelf="center" alignContent="center">
-          <CardBody width="large" height="small" background="light">
+      <Box>
+        <Card elevation="large" width="medium" background={props.background} alignSelf="center" alignContent="center">
+          <CardBody width="large" height="small" >
             <Image
               fill="horizontal"
               src={props.image}
             />
           </CardBody>
           <Box pad={{ horizontal: 'medium' }} responsive={false}>
-            <Heading level="2" margin={{"top": "large"}, {"bottom": "none"}} color="dark" alignSelf="center" >
+            <Heading level="3" margin={{"top": "large"}, {"bottom": "none"}} alignSelf="center" >
               {props.title}
             </Heading>
           </Box>
@@ -67,14 +72,25 @@ const CardItems = (props) => {
             <ExpandButton onClick={() => setOpen(!open)} />
           </CardFooter>
           <Collapsible fill="horizontal" width="100%" open={open}>
-          <List margin={{"bottom": "large"}}
-            // primaryKey="name"
-            // secondaryKey="percent"
-            // width="100%"
-            // fill="horizontal"
-            data={props.list}
-            itemProps={{"width": "100%"}}
-          />
+            {props.template === "skill" ? (
+            <List margin={{"bottom": "large"}}
+              data={props.list}
+              itemProps={{"width": "100%"}}
+              color="light"
+            />) : (
+              <Box>
+                <Paragraph>
+                  {props.localisation + ' - ' + props.date}
+                </Paragraph>
+                <List margin={{"bottom": "large"}}
+                  data={props.list}
+                  itemProps={{"width": "100%"}}
+                  color="light"
+                />
+              </Box>
+              
+            )}
+            
           </Collapsible>
         </Card>
       </Box>
