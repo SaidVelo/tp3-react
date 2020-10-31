@@ -5,7 +5,7 @@ import { Box, Image, Paragraph, Heading, Button } from 'grommet';
 
 
 const Brief = () => (
-  <Box fill="horizontal" direction="column" id="brief">
+  <Box fill="horizontal" direction="column" pad={{"bottom": "xlarge"}} id="brief">
     <Box
       fill="horizontal"
       direction="row-responsive"
@@ -13,7 +13,7 @@ const Brief = () => (
       align="center"
       pad="small"
     >
-      <Box width="80%" justify="center" align="center" alignSelf="center">
+      <Box width="80%" justify="center" align="center" alignSelf="center" flex="shrink">
         <Image
           height="auto"
           fill="horizontal"
