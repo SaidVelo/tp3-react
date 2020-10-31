@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Grommet, Box, Stack, Diagram, ResponsiveContext } from 'grommet';
-import CardItems from './CardItems/CardItems';
+import CardItems from './cards/CardItems';
 
 const theme = {
     global: {

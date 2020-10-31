@@ -1,12 +1,18 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+// import { storiesOf } from '@storybook/react';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+import Home from './pages/home/Home';
+import Portfolio from './pages/portfolio/Portfolio';
 
 import { Grommet, Header, Anchor, Box, ResponsiveContext, Menu } from 'grommet';
 import { Bike, Menu as MenuIcon } from 'grommet-icons';
-
-import Brief from './Sections/Brief';
-import Skills from './Sections/Skills';
-import Formations from './Sections/Formations';
 
 const theme = {
   global: {
@@ -24,7 +30,9 @@ const theme = {
   },
 };
 
-const Responsive = () => (
+const Layout = () => (
+
+  
   <Grommet theme={theme}>
     <Header background="transparent" pad="medium" height="xsmall">
       <Anchor
@@ -92,12 +100,11 @@ const Responsive = () => (
         }
       </ResponsiveContext.Consumer>
     </Header>
-    <Brief></Brief>
-    <Skills></Skills>
-    <Formations></Formations>
+    <Home></Home>
+    <Portfolio></Portfolio>
   </Grommet>
 );
 
-storiesOf('Header', module).add('Responsive', () => <Responsive />);
+// storiesOf('Header', module).add('Layout', () => <Layout />);
 
-export default Responsive;
+export default Layout;

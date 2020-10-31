@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Responsive from './features/Components/Responsive';
+import Layout from './features/Components/Layout';
 
 function App() {
   return (
-      <Responsive></Responsive>
+      <Layout></Layout>
   );
 }
 

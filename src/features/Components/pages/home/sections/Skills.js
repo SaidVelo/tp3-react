@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, ResponsiveContext } from 'grommet';
 
-import CardItems from './CardItems/CardItems';
+import CardItems from './cards/CardItems';
 
 const Skills = () => {
   const size = React.useContext(ResponsiveContext);
