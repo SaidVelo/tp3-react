@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, ResponsiveContext } from 'grommet';
+import { Box } from 'grommet';
 
 import Brief from './sections/Brief';
 import Skills from './sections/Skills';
