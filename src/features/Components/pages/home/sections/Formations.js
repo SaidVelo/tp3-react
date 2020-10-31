@@ -1,18 +1,9 @@
 import React from 'react';
 
-import { Grommet, Box, Stack, Diagram, ResponsiveContext } from 'grommet';
+import { Box, Stack, Diagram, ResponsiveContext } from 'grommet';
 import CardItems from './cards/CardItems';
 
-const theme = {
-    global: {
-      colors: {
-        "brand": '#fc6f20',
-        "light": '#f8f8ff',
-        "dark": '#21242c',
-        "transparent": '#ffffff00'
-      }
-    },
-  };
+
 
 const Formations = () => {
     const size = React.useContext(ResponsiveContext);
